@@ -1,4 +1,3 @@
-
 //Variáveis-------------------------------------------
 //controles da tela:
 let baixar = document.getElementById("baixar")
@@ -16,6 +15,7 @@ let PretBran = document.getElementById('PretBran');
 let operacao = document.getElementById('operacao');
 let select = document.getElementById('operador');
 let sig = document.getElementById('sigma');
+let norm = document.getElementById('norm');
 
 //botões da navegação
 let link1 = document.getElementById('link1');
@@ -48,21 +48,29 @@ let FlapGau = document.getElementById("FlapGau")
 let Fdetecta = document.getElementById("Fdetecta")
 
 //Filtros:
-let zerada3 = [0,0,0, 0,0,0, 0,0,0]
-let zerada5 = [0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0, 0,0,0,0,0]
-let zerada7 = [0,0,0,0,0,0,0, 0,0,0,0,0,0,0, 0,0,0,0,0,0,0, 0,0,0,0,0,0,0, 0,0,0,0,0,0,0, 0,0,0,0,0,0,0, 0,0,0,0,0,0,0]
-let memo3 = [1,1,1, 1,1,1, 1,1,1]
-let media = [0.1111,0.1111,0.1111, 0.1111,0.1111,0.1111, 0.1111,0.1111,0.1111]
-let desfocar = [1,1,1, 1,1,1, 1,1,1]
+let media3 = [0.1111,0.1111,0.1111, 0.1111,0.1111,0.1111, 0.1111,0.1111,0.1111]
+let media5 = [0.04,0.04,0.04,0.04,0.04, 0.04,0.04,0.04,0.04,0.04, 0.04,0.04,0.04,0.04,0.04, 0.04,0.04,0.04,0.04,0.04, 0.04,0.04,0.04,0.04,0.04]
+let media7 = [0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204, 0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204, 0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204, 0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204, 0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204, 0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204, 0.0204,0.0204,0.0204,0.0204,0.0204,0.0204,0.0204]
+let desfocar = [0.25,0.25,0.25, 0.25,0.25,0.25, 0.25,0.25,0.25]
 let aguçar = [-1,-1,-1, -1,9,-1, -1,-1,-1]
 let boost = [0,-1,0, -1,5.2,-1, 0,-1,0]
 let relevo = [-2,-1,0, -1,1,1, 0,1,2]
-let horizontal = [-1,0,1, -2,0,2, -1,0,1]
-let vertical = [-1,-2,-1, 0,0,0, 1,2,1]
-let laplaciana = [0,-1,0, -1,4,-1, 0,-1,0]
-let gaussiana = [0.0625,0.125,0.0625, 0.125,0.25,0.125,  0.0625,0.125, 0.0625]
+let horizontal3 = [-1,0,1, -2,0,2, -1,0,1]
+let horizontal5 = [-2,-1,0,1,2, -2,-1,0,1,2, -4,-2,0,2,4, -2,-1,0,1,2, -2,-1,0,1,2]
+let horizontal7 = [-2,-1,-1,0,1,1,2, -2,-1,-1,0,1,1,2, -4,-2,-1,0,1,2,4, -4,-2,-1,0,1,2,4, -8,-4,-2,0,2,4,8, -2,-1,-1,0,1,1,2, -2,-1,-1,0,1,1,2]
+let vertical3 = [-1,-2,-1, 0,0,0, 1,2,1]
+let vertical5 = [-2,-2,-4,-2,-2, -1,-1,-2,-1,-1, 0,0,0,0,0, 1,1,2,1,1, 2,2,4,2,2]
+let vertical7 = [-2,-2,-4,-8,-4,-2,-2, -1,-1,-2,-4,-2,-1,-1, -1,-1,-1,-2,-1,-1,-1, 0,0,0,0,0,0,0, 1,1,1,2,1,1,1, 1,1,2,4,2,1,1, 2,2,4,8,4,2,2]
+let laplaciana3 = [0,-1,0, -1,4,-1, 0,-1,0]
+let laplaciana5 = [-1,-1,-1,-1,-1, -1,-1,-1,-1,-1, -1,-1,24,-1,-1, -1,-1,-1,-1,-1, -1,-1,-1,-1,-1,]
+let laplaciana7 = [-1,-1,-1,-1,-1,-1,-1, -1,-1,-1,-1,-1,-1,-1, -1,-1,-1,8,-1,-1,-1, -1,-1,8,10,8,-1,-1, -1,-1,-1,8,-1,-1,-1, -1,-1,-1,-1,-1,-1,-1, -1,-1,-1,-1,-1,-1,-1]
+let gaussiana3 = [0.0625,0.125,0.0625, 0.125,0.25,0.125,  0.0625,0.125, 0.0625]
+let gaussiana5 = [0.00366,0.01465,0.0256,0.01465,0.00366, 0.01465,0.0586,0.0952,0.0586,0.01465, 0.0256,0.0952,0.15,0.0952,0.0256, 0.01465,0.0586,0.0952,0.0586,0.01465, 0.00366,0.01465,0.0256,0.01465,0.00366]
+let gaussiana7 = [0,0.0009765625,0.00390625,0.0048828125,0.00390625,0.0009765625,0, 0.0009765625,0.0087890625,0.0224609375,0.0283203125,0.0224609375,0.0087890625,0.0009765625, 0.00390625,0.0224609375,0.0595703125,0.076171875,0.0595703125,0.0224609375,0.00390625, 0.0048828125,0.0283203125,0.076171875,0.09765625,0.076171875,0.0283203125,0.0048828125, 0.00390625,0.0224609375,0.0595703125,0.076171875,0.0595703125,0.0224609375,0.00390625, 0.0009765625,0.0087890625,0.0224609375,0.0283203125,0.0224609375,0.0087890625,0.0009765625, 0,0.0009765625,0.00390625,0.0048828125,0.00390625,0.0009765625,0]
 let lapGau = [0,0,1,0,0, 0,1,2,1,0, 1,2,-16,2,1, 0,1,2,1,0, 0,0,1,0,0 ]
-let detecta = [-1,-1,-1,  -1,8,-1, -1,-1,-1 ]
+let detecta3 = [-1,-1,-1,  -1,8,-1, -1,-1,-1 ]
+let detecta5 = [-1,-1,-1,-1,-1, -1,-1,1,-1,-1, -1,1,15,1,-1, -1,-1,1,-1,-1, -1,-1,-1,-1,-1,]
+let detecta7 = [-1,-1,-1,-1,-1,-1,-1, -1,-1,0,-1,-1,-1,-1, -1,-1,-1,4,-1,-1,-1, -1,0,4,20,4,0,-1, -1,-1,-1,4,-1,-1,-1, -1,-1,-1,0,-1,-1,-1, -1,-1,-1,-1,-1,-1,-1]
 
 //Entradas da Matriz:
 let ele = new Array(7)
@@ -330,16 +338,119 @@ function download(){
     link.click()
 }
 
-function addMedia(){addFiltro(media, 3)}
+function normalizar(){
+    var tamanho = ajusta.value
+    var mini = ele[1][1].value
+    var maxi = ele[1][1].value
+    var atual 
+    let k= 0
+    //encontra os maiores e menores valores da matriz
+    for (let i=1; i<= tamanho; i++){
+        for (let j=1; j<= tamanho; j++){
+            atual = ele[i][j].value
+            if(atual > maxi){
+                maxi = atual
+            }
+            if(atual < mini){
+                mini = atual
+            }
+            k++;
+        }
+    }
+    //normaliza
+    if((maxi - mini) != 0){
+        for (let i=1; i<= tamanho; i++){
+            for (let j=1; j<= tamanho; j++){
+                atual = ele[i][j].value
+                ele[i][j].value = (atual - mini)/(maxi - mini) 
+                k++;
+            }
+        }
+    }
+    filtra()
+}
+
+function addMedia3(){addFiltro(media3, 3)}
+function addMedia5(){addFiltro(media5, 5)}
+function addMedia7(){addFiltro(media7, 7)}
+function addHorizontal3(){addFiltro(horizontal3, 3)}
+function addHorizontal5(){addFiltro(horizontal5, 5)}
+function addHorizontal7(){addFiltro(horizontal7, 7)}
+function addVertical3(){addFiltro(vertical3, 3)}
+function addVertical5(){addFiltro(vertical5, 5)}
+function addVertical7(){addFiltro(vertical7, 7)}
+function addLaplaciana3(){addFiltro(laplaciana3, 3)}
+function addLaplaciana5(){addFiltro(laplaciana5, 5)}
+function addLaplaciana7(){addFiltro(laplaciana7, 7)}
+function addGaussiana3(){addFiltro(gaussiana3, 3)}
+function addGaussiana5(){addFiltro(gaussiana5, 5)}
+function addGaussiana7(){addFiltro(gaussiana7, 7)}
+function addDetectorBordas3(){addFiltro(detecta3, 3)}
+function addDetectorBordas5(){addFiltro(detecta5, 5)}
+function addDetectorBordas7(){addFiltro(detecta7, 7)}
+
+
+
+function addMedia(){
+    if(ajusta.value == "3"){
+        addMedia3()
+    }else if(ajusta.value == "5"){
+        addMedia5()
+    }else{//tam = 7
+        addMedia7()
+    }
+}
 function addDesfocar(){addFiltro(desfocar, 3)}
 function addAguçar(){addFiltro(aguçar, 3)}
 function addBoost(){addFiltro(boost, 3)}
 function addRelevo(){addFiltro(relevo, 3)}
-function addHorizontal(){addFiltro(horizontal, 3)}
-function addVertical(){addFiltro(vertical, 3)}
-function addLaplaciana(){addFiltro(laplaciana, 3)}
-function addGaussiana(){addFiltro(gaussiana, 3)}
-function addDetectorBordas(){addFiltro(detecta, 3)}
+function addHorizontal(){
+    if(ajusta.value == "3"){
+        addHorizontal3()
+    }else if(ajusta.value == "5"){
+        addHorizontal5()
+    }else{//tam = 7
+        addHorizontal7()
+    }
+}
+function addVertical(){
+    if(ajusta.value == "3"){
+        addVertical3()
+    }else if(ajusta.value == "5"){
+        addVertical5()
+    }else{//tam = 7
+        addVertical7()
+    }
+}
+function addLaplaciana(){
+    if(ajusta.value == "3"){
+        addLaplaciana3()
+    }else if(ajusta.value == "5"){
+        addLaplaciana5()
+    }else{//tam = 7
+        addLaplaciana7()
+    }
+}
+//function addGaussiana(){addFiltro(gaussiana, 3)}
+function addGaussiana(){
+    if(ajusta.value == "3"){
+        addGaussiana3()
+    }else if(ajusta.value == "5"){
+        addGaussiana5()
+    }else{//tam = 7
+        addGaussiana7()
+    }
+}
+
+function addDetectorBordas(){
+    if(ajusta.value == "3"){
+        addDetectorBordas3()
+    }else if(ajusta.value == "5"){
+        addDetectorBordas5()
+    }else{//tam = 7
+        addDetectorBordas7()
+    }
+}
 function addLapGau(){addFiltro(lapGau, 5)}
 
 
@@ -395,6 +506,7 @@ function escutadores(){
     PretBran.addEventListener('click', filtra)          //Filtra ao clicar em Preto e Branco
     colorido.addEventListener('click', filtra)          //Filtra ao clicar colorido
     operacao.addEventListener('click', operar)          //Opera sobre todos os elementos da Matriz Máscara
+    norm.addEventListener('click', normalizar) 
 
     //mostra os conteúdos do navegador
     link1.addEventListener('click', function(){mostra("1")} )
