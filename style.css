@@ -303,15 +303,16 @@ main:after{
     top: 40%;
   }
 
- .fa-times{
-   position: absolute;
-   right: 20px;
-   top: 20px;
-   color: white;
-   font-size: 20px;
-   font-weight: bold;
-   cursor: pointer; 
-}
+  .fecha{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer; 
+  }
 /* F--------------- Formatação pop-ups ---------------F */
 
 
@@ -326,8 +327,3 @@ footer{
 
 }
 /* F--------------- Formatação do Footer ---------------F */
-
-
-  
-
-
