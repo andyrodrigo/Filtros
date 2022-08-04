@@ -18,11 +18,11 @@
 <!--ts-->
    * [Necessidade](#Necessidade)
    * [Navegação](#Navegação)
-   * [O que são Filtros de Imagens](#O que são Filtros de Imagens)
-   * [Tipos de Filtros](#Tipos_de_Filtros)
-   * [Convolução Digital](#Convolução Digital)
+   * [O que são Filtros de Imagens](#O)
+   * [Tipos de Filtros](#Tipos)
+   * [Convolução Digital](#Convolução)
    * [Tutorial](#Tutorial)
-   * [Tecnologias usadas no desenvolvimento](#Tecnologias usadas no desenvolvimento)
+   * [Tecnologias usadas no desenvolvimento](#Tecnologias)
    * [Recursos](#Recursos)
 <!--te-->
 
