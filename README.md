@@ -19,7 +19,7 @@
    * [Necessidade](#Necessidade)
    * [Navegação](#Navegação)
    * [O que são Filtros de Imagens](#O que são Filtros de Imagens)
-   * [Tipos de Filtros](#Tipos de Filtros)
+   * [Tipos de Filtros](#TiposdeFiltros)
    * [Convolução Digital](#Convolução Digital)
    * [Tutorial](#Tutorial)
    * [Tecnologias usadas no desenvolvimento](#Tecnologias usadas no desenvolvimento)
