@@ -18,11 +18,11 @@
 <!--ts-->
    * [Necessidade](#Necessidade)
    * [Navegação](#Navegação)
-   * [O que são Filtros de Imagens](#O)
-   * [Tipos de Filtros](#Tipos)
-   * [Convolução Digital](#Convolução)
+   * [O que são Filtros de Imagens](#O_que_são_Filtros_de_Imagens)
+   * [Tipos de Filtros](#ipos_de_Filtros)
+   * [Convolução Digital](#Convolução_Digital)
    * [Tutorial](#Tutorial)
-   * [Tecnologias usadas no desenvolvimento](#Tecnologias)
+   * [Tecnologias usadas no desenvolvimento](#Tecnologias_usadas_no_desenvolvimento)
    * [Recursos](#Recursos)
 <!--te-->
 
@@ -34,7 +34,7 @@
 
 > Na navegação da página você pode entender "**O que são filtros de imagens**", "**Quais são os tipos de filtros**", "**O que é convolução digital**" e ver um tutorial mais explicado de como usar a ferramenta.
 
-## O que são Filtros de Imagens
+## O_que_são_Filtros_de_Imagens
 
 > A filtragem espacial é uma técnica usada em processamento de imagens.
 
@@ -43,7 +43,7 @@
 <img src="/imagens/oqf1.jpg"/>
 <img src="/imagens/oqf2.jpg"/>
 
-## Tipos de Filtros {#tipos}
+## Tipos_de_Filtros
 
 > Existem diversos tipos de máscaras conhecidas e utilizadas para diferentes objetivos.
 
@@ -55,7 +55,7 @@
 <img src="/imagens/tf2.jpg"/>
 <img src="/imagens/tf3.jpg"/>
 
-## Convolução Digital
+## Convolução_Digital
 
 > A filtragem de imagens utiliza a técnica de convolução digital para processar a imagem resultado a partir da imagem de entrada e a da máscara.
 >Uma matriz denominada máscara (kernel) é usada para convoluir com a imagem digital, servindo como o núcleo de convolução e gerando uma terceira matriz que será a imagem filtrada. Existem vários tipos conhecidos e utilizados de matrizes máscaras para realização da filtragem no domínio espacial, cada uma delas aproximando um efeito de filtragem esperado para a imagem. Elas geralmente têm um tamanho de linhas e colunas que varia entre 3x3 a 7x7.
@@ -95,7 +95,7 @@ Clique no nome de algum deles para trazer os valores dele para máscara.
 
 # Utilize, aprenda e divirta-se! =D
 
-## Tecnologias usadas no desenvolvimento
+## Tecnologias_usadas_no_desenvolvimento
 
 * **JavaScript** Linguagem de programção usada na criação do projeto
 * **HTML5** Linguagem de marcação de texto
