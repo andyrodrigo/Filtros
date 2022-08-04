@@ -43,7 +43,7 @@
 <img src="/imagens/oqf1.jpg"/>
 <img src="/imagens/oqf2.jpg"/>
 
-## Tipos de Filtros
+## Tipos de Filtros {#tipos}
 
 > Existem diversos tipos de máscaras conhecidas e utilizadas para diferentes objetivos.
 
