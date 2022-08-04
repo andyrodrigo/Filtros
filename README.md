@@ -17,13 +17,13 @@
 
 <!--ts-->
    * [Necessidade](#Necessidade)
-   * [Navegação](#demo-project)
-   * [O que são Filtros de Imagens](#features)
-   * [Tipos de Filtros](#pre-req)
-   * [Convolução Digital](#pre-req)
-   * [Tutorial](#pre-req)
-   * [Tecnologias usadas no desenvolvimento](#pre-req)
-   * [Recursos](#pre-req)
+   * [Navegação](#Navegação)
+   * [O que são Filtros de Imagens](#O que são Filtros de Imagens)
+   * [Tipos de Filtros](#Tipos de Filtros)
+   * [Convolução Digital](#Convolução Digital)
+   * [Tutorial](#Tutorial)
+   * [Tecnologias usadas no desenvolvimento](#Tecnologias usadas no desenvolvimento)
+   * [Recursos](#Recursos)
 <!--te-->
 
 ## Necessidade:
