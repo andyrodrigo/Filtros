@@ -319,11 +319,21 @@ main:after{
 
 /* I--------------- Formatação do Footer ---------------I */
 footer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #f1f1f1;  
   background-color: #1B74E4;  /*Cor de Fundo*/
   padding: 10px;                /*Espaçamento dentro dele*/
   text-align: center;           /*Alinhamento do texto*/
   margin: 190px 10px 10px 10px;
 
+}
+
+.logos > img{
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 /* F--------------- Formatação do Footer ---------------F */
