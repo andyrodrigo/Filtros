@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Filtros Espaciais</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src= https://docs.opencv.org/3.4.0/opencv.js  type="text/javascript"></script>
+
+    <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
+
+</head>
+
+<body>
+
+    <header>header</header>
+
+    <main>
+
+        <section id="colunaImagem">
+
+            <div id="controleDeImagem">barra lateral</div>
+
+            <div id="barraDeImagem">
+
+                <div id="ladoDoMedidorV">
+                    
+                    <input type="range" id="medidorV" min="0" max="100" value="50" >
+                    <p>texto</p>
+                </div>
+
+                <div id="ladoDoMedidorH">
+
+                    <input type="range" id="medidorH" min="0" max="100" value="50" >
+
+                    <div id="telaDeImagem">
+                        <div id="imagemFundo" class="imagemSobreposta" >fundo</div>
+                        <div id="imagemFrente" class="imagemSobreposta" >frente</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="colunaOpcoes">
+
+            <div id="BlocoMatriz">
+
+                <h2 id="tit02">Matriz Máscara do Filtro</h2>
+
+                <input type="range" id="ajustaTamanhoMatriz" min="3" max="7" step=2 value="3" >
+                <p id="p02">3x3-----5x5-----7x7</p>
+
+                <table id="matriz" ></table>
+            </div>
+
+            <div id="filtros">filtros</div>
+        </section>
+    </main>
+
+    <footer>footer</footer>
+
+    
+    <script src="functions.js"></script>
+    <script src="index.js"></script>
+
+</body>
+
+
+
+</html>
