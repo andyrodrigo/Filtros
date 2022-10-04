@@ -3,9 +3,22 @@ body{
 }
 
 header{
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     background-color: aqua;
 }
+    /*----------*/
+    .h-link{
+        color: black;
+        padding: 10px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .h-link:hover{
+        color: white;
+    }
 
 /*----------*/
 
@@ -125,6 +138,20 @@ header{
 /*----------*/
 
 footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    background-color:blueviolet;
+    color: #f1f1f1;
+    background-color: #1B74E4;
+}
+
+footer > a{
+    padding: 0 20px 0 20px;
+}
+
+footer > a > img{
+    width: 30px;
+    height: 30px;
 }

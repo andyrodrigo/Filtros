@@ -1,6 +1,8 @@
 
 const matriz = document.getElementById("matriz");
 
+const filtrosJson = 'filtros.json';
+
 let elemento;
 let elementoValor;
 
