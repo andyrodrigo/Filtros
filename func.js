@@ -1,24 +1,3 @@
-
-const matriz = document.getElementById("matriz");
-
-const filtrosJson = 'filtros.json';
-
-let elemento;
-let elementoValor;
-
-//Escutadores---------------------------------------------------------------------------
-function escutadores(){
-
-}
-//-----------------------------------------------------------------------------------------------------------------------
-
-//inicialização
-window.addEventListener("load", escutadores);
-window.addEventListener("load", function(){ criarMatriz( 3 , 3 ) } );
-window.addEventListener("load", montarFiltros() );
-
-
-
 function criarMatriz( linhas , colunas){
 
     elemento = new Array(linhas);
