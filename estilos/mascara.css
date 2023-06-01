@@ -1,0 +1,67 @@
+#bloco_matriz {
+  margin: 0;
+  width: fit-content;
+  background-color: chartreuse;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+/*----------*/
+#controleTamanhoMatriz {
+  width: 80px;
+  cursor: pointer;
+}
+
+#texto_escalas {
+  font-size: 10px;
+  padding: 0;
+  border: 0;
+  margin: 0 0 5px 0;
+  outline: 0;
+}
+
+.campoNumerico {
+  width: 40px;
+}
+
+td,
+th {
+  padding: 1px;
+}
+
+#matriz {
+  background-color: #1b74e4;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.operador {
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px #000000;
+}
+
+.seletor {
+  background-color: #1b74e4;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.seletor:hover {
+  background-color: #1868c8;
+  color: goldenrod;
+}
+
+#entrada_sigma {
+  width: 50px;
+}
+
+.bto:active {
+  color: #dd5f4e;
+  transform: translateY(2px);
+  box-shadow: none;
+}

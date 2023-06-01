@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: black;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  background-color: aqua;
+}
+
+main {
+  width: 100%;
+  background-color: blue;
+  margin: 1% 0 1% 0;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+/*----------*/
+.h-link {
+  color: black;
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.h-link:hover {
+  color: white;
+}
+
+#colunaOpcoes {
+  width: 30%;
+  min-width: 250px;
+  background-color: burlywood;
+}
+
+/*----------*/
+
+#filtros {
+  background-color: darkred;
+}
+
+/*----------*/
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #f1f1f1;
+  background-color: #1b74e4;
+  position: sticky;
+  bottom: 0;
+}
+
+footer > a {
+  padding: 0 20px 0 20px;
+}
+
+footer > a > img {
+  width: 30px;
+  height: 30px;
+}

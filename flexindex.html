@@ -8,7 +8,11 @@
 
     <title>Filtros Espaciais</title>
 
-    <link rel="stylesheet" href="flex.css">
+    <link rel="stylesheet" href="estilos/geral.css">
+    <link rel="stylesheet" href="estilos/imagem.css">
+    <link rel="stylesheet" href="estilos/mascara.css">
+    <link rel="stylesheet" href="estilos/filtros.css">
+
     <script src= https://docs.opencv.org/3.4.0/opencv.js  type="text/javascript"></script>
 
     <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
@@ -17,32 +21,31 @@
 
 <body>
 
+    
+
+
     <header>
         <a href="#" class="h-link" >HOME</a>
         <a href="#" class="h-link" >LINK1</a>
         <a href="#" class="h-link" >LINK2</a>
         <a href="#" class="h-link" >LINK3</a>
         <a href="#" class="h-link" >LINK4</a>
-        <a href="#" class="h-link" >LINK5</a>
+        <a href="#" class="h-link" >LINK5 MUITO GRANDE </a>
     </header>
 
     <main>
-
         <section id="colunaImagem">
 
-            <div id="controleDeImagem">barra lateral</div>
+            
 
             <div id="barraDeImagem">
 
-                <div id="ladoDoMedidorV">
-                    
-                    <input type="range" id="medidorV" min="0" max="100" value="50" >
-                    <p>texto</p>
+                <div id="ladoDoMedidorV"> 
+                    <input type="range" id="controleV" min="0" max="100" value="50" >
                 </div>
 
                 <div id="ladoDoMedidorH">
-
-                    <input type="range" id="medidorH" min="0" max="100" value="50" >
+                    <input type="range" id="controleH" min="0" max="100" value="50" >
 
                     <div id="telaDeImagem">
                         <div id="imagemFundo" class="imagemSobreposta" >fundo</div>
@@ -50,41 +53,76 @@
                     </div>
                 </div>
             </div>
+
+            <div id="caixa_escolher_imagem" >
+                <label for="meuArquivo"><strong>Carregue uma Imagem: </strong> </label>
+                <input id="meuArquivo" type="file"  value="Escolher Imagem">
+                <input id="baixar" type="button"  value="Baixar Imagem Filtrada">
+            </div>
         </section>
 
         <section id="colunaOpcoes">
 
-            <div id="BlocoMatriz">
+            <div id="bloco_matriz">
 
                 <h2 id="tit02">Matriz Máscara do Filtro</h2>
 
-                <input type="range" id="ajustaTamanhoMatriz" min="3" max="7" step=2 value="3" >
-                <p id="p02">3x3-----5x5-----7x7</p>
+                <input type="range" id="controleTamanhoMatriz" min="3" max="7" step=2 value="3" >
+                <p id="texto_escalas">3x3-----5x5-----7x7</p>
 
                 <table id="matriz" ></table>
+
             </div>
 
-            <div id="filtros">filtros</div>
+            <div id="bloco_operadores">
+                <select id="select_operador" name="operador" class="operador seletor"> 
+                    <option value="multiplicador">Multiplicar Matriz por: </option>
+                    <option value="divisor">Dividir Matriz por: </option>
+                    <option value="fator">Somar elementos por: </option>
+                    <option value="subtrator">Diminuir elementos por: </option>
+                </select>                 
+                <input id="entrada_sigma" type="number" class=" operador" value='1' >
+                <input id='bto_operacao' type="button" class="bto seletor operador" value='Operar' >
+                <input id='bto_normalizar' type="button" class="bto seletor operador" value='Normalizar' >             
+            </div>
+
+            <div id="bloco_filtros">
+                <h2 id="titulo_filtros">Lista de Filtros</h2>
+                <input type="radio" name="cor" value="Colorido" id="colorido">Colorido
+                <input type="radio" name="cor" value="Preto e Branco" id="PretBran" checked>Preto e Branco
+                <div id="listaDeFiltros">
+                    <ul>
+                        <li><input type="button" class="filtro" value="Media" id="Fmedia"></li>
+                        <li><input type="button" class="filtro" value="Desfocar" id="Fdesfocar"></li>
+                        <li><input type="button" class="filtro" value="Aguçar" id="Faguçar"></li>
+                        <li><input type="button" class="filtro" value="HiBoost" id="Fboost"></li>
+                        <li><input type="button" class="filtro" value="Relevo" id="Frelevo"></li>
+                        <li><input type="button" class="filtro" value="Horizontal" id="Fhorizontal"></li>
+                        <li><input type="button" class="filtro" value="Vertical" id="Fvertical"></li>
+                        <li><input type="button" class="filtro" value="Laplaciana" id="Flaplaciana"></li>
+                        <li><input type="button" class="filtro" value="Gaussiana" id="Fgaussiana"></li>
+                        <li><input type="button" class="filtro" value="Detector de Bordas" id="Fdetecta"></li>
+                        <li><input type="button" class="filtro" value="Laplaciana Gaussiana" id="FlapGau"></li>
+                    </ul>
+                </div> 
+            </div>
         </section>
     </main>
-
-    <footer>
-        <p>Criado por Anderson "Andy" Benício</p>
-
-        <a href="https://github.com/andyrodrigo">
-            <img src="imagens/github_logo.png" alt="logo do github">
-        </a>
-
-        <a  href="https://www.linkedin.com/in/anderson-rodrigo-gomes-ben%C3%ADcio-689190218/">
-            <img src="imagens/linkedin_logo.png" alt="logo do LinkedIn">
-        </a>
-    </footer>
-
-    <script src="var.js"></script>
-    <script src="func.js"></script>
-
 </body>
 
+<footer>
+    <p>Criado por Anderson "Andy" Benício</p>
 
+    <a href="https://github.com/andyrodrigo">
+        <img src="imagens/github_logo.png" alt="logo do github">
+    </a>
+
+    <a  href="https://www.linkedin.com/in/anderson-rodrigo-gomes-ben%C3%ADcio-689190218/">
+        <img src="imagens/linkedin_logo.png" alt="logo do LinkedIn">
+    </a>
+</footer>
+
+<script src="scripts/variaveis.js"></script>
+<script src="scripts/funcoes.js"></script>
 
 </html>

@@ -1,0 +1,44 @@
+#bloco_filtros {
+  height: 56%;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+  background-color: darkslategrey;
+}
+
+#titulo_filtros {
+  font-size: 20px;
+}
+
+#listaDeFiltros > ul {
+  list-style-type: none;
+  margin: 10px;
+  padding: 0;
+}
+
+#listaDeFiltros > ul > li {
+  margin: 0;
+}
+
+.filtro {
+  width: 100%;
+  margin: 2px;
+  padding: 5px;
+  border: none;
+  border-radius: 10px;
+  background-color: #1b74e4;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: 0 2px #000000;
+  cursor: pointer;
+}
+.filtro:hover {
+  background-color: #1868c8;
+  color: goldenrod;
+}
+
+.filtro:active {
+  color: #dd5f4e;
+  transform: translateY(2px);
+  box-shadow: none;
+}
