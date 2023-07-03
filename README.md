@@ -1,4 +1,3 @@
-
 # Filtros Espaciais
 
 ## Sobre o Projeto:
@@ -11,19 +10,20 @@
 
 <https://andyrodrigo.github.io/Filtros>
 
-<img src="/imagens/Layout.jpg"/>
+<img src="/imagens/LayoutNovo.jpg"/>
 
 ## Índice:
 
 <!--ts-->
-   * [Necessidade](#Necessidade)
-   * [Navegação](#Navegação)
-   * [O que são Filtros de Imagens](#O_que_são_Filtros_de_Imagens)
-   * [Tipos de Filtros](#ipos_de_Filtros)
-   * [Convolução Digital](#Convolução_Digital)
-   * [Tutorial](#Tutorial)
-   * [Tecnologias usadas no desenvolvimento](#Tecnologias_usadas_no_desenvolvimento)
-   * [Recursos](#Recursos)
+
+- [Necessidade](#Necessidade)
+- [Navegação](#Navegação)
+- [O que são Filtros de Imagens](#O_que_são_Filtros_de_Imagens)
+- [Tipos de Filtros](#ipos_de_Filtros)
+- [Convolução Digital](#Convolução_Digital)
+- [Tutorial](#Tutorial)
+- [Tecnologias usadas no desenvolvimento](#Tecnologias_usadas_no_desenvolvimento)
+- [Recursos](#Recursos)
 <!--te-->
 
 ## Necessidade:
@@ -47,7 +47,7 @@
 
 > Existem diversos tipos de máscaras conhecidas e utilizadas para diferentes objetivos.
 
-> O tamanho das máscaras (*kernel*) e os valores de seus parâmetros determinam o tipo de filtragem que será produzido na imagem de saída.
+> O tamanho das máscaras (_kernel_) e os valores de seus parâmetros determinam o tipo de filtragem que será produzido na imagem de saída.
 
 > Eles podem ser: filtros de suavização, filtros de realce e detectores de bordas.
 
@@ -58,7 +58,7 @@
 ## Convolução_Digital
 
 > A filtragem de imagens utiliza a técnica de convolução digital para processar a imagem resultado a partir da imagem de entrada e a da máscara.
->Uma matriz denominada máscara (kernel) é usada para convoluir com a imagem digital, servindo como o núcleo de convolução e gerando uma terceira matriz que será a imagem filtrada. Existem vários tipos conhecidos e utilizados de matrizes máscaras para realização da filtragem no domínio espacial, cada uma delas aproximando um efeito de filtragem esperado para a imagem. Elas geralmente têm um tamanho de linhas e colunas que varia entre 3x3 a 7x7.
+> Uma matriz denominada máscara (kernel) é usada para convoluir com a imagem digital, servindo como o núcleo de convolução e gerando uma terceira matriz que será a imagem filtrada. Existem vários tipos conhecidos e utilizados de matrizes máscaras para realização da filtragem no domínio espacial, cada uma delas aproximando um efeito de filtragem esperado para a imagem. Elas geralmente têm um tamanho de linhas e colunas que varia entre 3x3 a 7x7.
 
 <img src="/imagens/cd1.jpg"/>
 <img src="/imagens/cd2.jpg"/>
@@ -73,7 +73,7 @@
 > A imagem se ajustará ao tamanho da área de exibição se o tamanho da largura ou da coluna ultrapassar **750 pixeis**, entretanto, ao baixar, o resultado o tamanho original será mantido.
 
 > Use o botão **Baixar Imagem Filtrada** para fazer o download do resultado.
-O formato da imagem filtrada será na extensão PNG.
+> O formato da imagem filtrada será na extensão PNG.
 
 > Use os **controles deslizantes** horizontal e vertical ao redor da imagem para comparar o antes e depois da filtragem.
 
@@ -86,10 +86,10 @@ O formato da imagem filtrada será na extensão PNG.
 <img src="/imagens/BMF.png"/>
 
 > Você pode querer ver o resultado em **preto e branco ou colorido**. Para tanto use a checkbox da lista de filtros.
-Lembrando que, o resultado de alguns filtros não opera muito bem dependendo dessa escolha. Faça os testes.
+> Lembrando que, o resultado de alguns filtros não opera muito bem dependendo dessa escolha. Faça os testes.
 
- > A **lista de filtros** contém alguns dos filtros mais comuns da literatura.
-Clique no nome de algum deles para trazer os valores dele para máscara.
+> A **lista de filtros** contém alguns dos filtros mais comuns da literatura.
+> Clique no nome de algum deles para trazer os valores dele para máscara.
 
 <img src="/imagens/ListaFiltros.png"/>
 
@@ -97,10 +97,10 @@ Clique no nome de algum deles para trazer os valores dele para máscara.
 
 ## Tecnologias_usadas_no_desenvolvimento
 
-* **JavaScript** Linguagem de programção usada na criação do projeto
-* **HTML5** Linguagem de marcação de texto
-* **CSS** Estilização da Ferramenta
-* **OpenCV** Biblioteca com funções de PDI
+- **JavaScript** Linguagem de programção usada na criação do projeto
+- **HTML5** Linguagem de marcação de texto
+- **CSS** Estilização da Ferramenta
+- **OpenCV** Biblioteca com funções de PDI
 
 ## Recursos
 
@@ -109,7 +109,7 @@ Clique no nome de algum deles para trazer os valores dele para máscara.
 - [x] Controle Deslizante do tipo: Antes/Depois
 - [x] Carregamento de imagem para a ferramenta
 - [x] Matriz Máscara com tamanhos: 3x3, 5x5, 7x7
-- [x] Convolução Digital entre *kernel* e Imagem
+- [x] Convolução Digital entre _kernel_ e Imagem
 - [x] Baixar imagens filtradas para o PC
 - [x] Operações em tempo real
 - [x] Lista de Filtros da Literatura
@@ -122,16 +122,13 @@ Clique no nome de algum deles para trazer os valores dele para máscara.
 - [x] Operações Matemáticas sobre toda a matriz
 - [x] Normalizar a matriz
 - [x] Ajuste automático da imagem carregada na tela (tamanhos min e max)
-- [ ] Responsividade
-- [ ] Uso de FlexBox para tamanhos de elementos autoajustáveis
-- [ ] Melhoria no Layout
-- [ ] Uso de novos conhecimentos de CSS
-- [ ] Separação dos arquivos js para cada elemento
+- [x] Responsividade
+- [x] Uso de FlexBox para tamanhos de elementos autoajustáveis
+- [x] Melhoria no Layout
+- [x] Uso de novos conhecimentos de CSS
+- [x] Separação dos arquivos js para cada elemento
 - [ ] Imagens modelo para serem usadas
 - [ ] Salvar filtros criados na lista
 - [ ] Verificação de erros do usuário
 - [ ] Verificação dos cálculos da convolução entre a imagem e a matriz
 - [ ] Uso de filtro não-lineares
-
-
-

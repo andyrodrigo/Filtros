@@ -1,43 +1,55 @@
 body {
   margin: 0;
   height: 100vh;
-  background-color: black;
+  background-color: #f0f2f5;
 }
 
 header {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  background-color: aqua;
+  background-color: #1b74e4;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 main {
   width: 100%;
-  background-color: blue;
   margin: 1% 0 1% 0;
   display: flex;
+  justify-content: flex-start;
   flex-wrap: wrap;
   overflow: auto;
 }
 
 /*----------*/
 .h-link {
-  color: black;
+  color: #ffffff;
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
 }
 
 .h-link:hover {
-  color: white;
+  color: goldenrod;
+}
+
+#colunaImagem {
+  width: 60%;
+  min-width: 665px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #colunaOpcoes {
-  width: 30%;
-  min-width: 250px;
-  background-color: burlywood;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+  min-width: 370px;
 }
 
 /*----------*/

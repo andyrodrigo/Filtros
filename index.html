@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,170 +8,122 @@
 
     <title>Filtros Espaciais</title>
 
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="estilos/geral.css">
+    <link rel="stylesheet" href="estilos/imagem.css">
+    <link rel="stylesheet" href="estilos/mascara.css">
+    <link rel="stylesheet" href="estilos/filtros.css">
+    <link rel="stylesheet" href="estilos/conteudo.css">
+
     <script src= https://docs.opencv.org/3.4.0/opencv.js  type="text/javascript"></script>
 
     <link rel="icon" type="image/x-icon" href="imagens/favicon.ico">
 
 </head>
-<body>
 
+<body>
     <header>
-        <h1>Header</h1>
+        <a id="home" class="h-link" >Home</a>
+        <a id="link1" class="h-link" >O que são Filtros</a>
+        <a id="link2" class="h-link" >Tipos de Filtros</a>
+        <a id="link3" class="h-link" >Convolução Digital</a>
+        <a id="link4"class="h-link" >Tutorial</a>
+        <a id="link5"  class="h-link" >Sobre o Programa e o Autor</a>
     </header>
 
-    <nav>
-        <a id="link1" href="#">O que são filtros</a>
-        <a id="link2" href="#">Tipos de Filtros</a>
-        <a id="link3" href="#">Convolução Digital</a>
-        <a id="link4" href="#">Tutorial</a>
-        <a id="link5" href="#">Sobre</a>
-    </nav>
-
-    <main>
-
-        <div id="ladoA" class="Coluna">
-            <input type="range" id="medidorV" min="0" max="100" value="0" >
-        </div>
-
-        <section id="ColunaImagens" class="Coluna">
-            <div id="ladoB">
-                <div>
-                    <label id="escolha" >
-                        <strong>Carregue uma Imagem: </strong> 
-                        <input type="file" id="meuArquivo" value="Escolher Imagem">
-                        <input type="button" id="baixar" value="Baixar Imagem Filtrada">
-                    </label>
-                    <input type="range" id="medidorH" min="0" max="100" value="50" >
+    <main id="ferramenta">
+        <section id="colunaImagem">
+            <div id="barraDeImagem">
+                <div id="ladoDoMedidorV"> 
+                    <input type="range" id="controleV" min="0" max="100" value="0" >
                 </div>
-                <div id=Bimagem>
-                    <div id='imagemFundo' class='img'></div>
-                    <div id='imagemFrente' class='img'></div>
+
+                <div id="ladoDoMedidorH">
+                    <input type="range" id="controleH" min="0" max="100" value="50" >
+
+                    <div id="telaDeImagem">
+                        <div id="imagemFundo" class="imagemSobreposta" ></div>
+                        <div id="imagemFrente" class="imagemSobreposta" ></div>
+                    </div>
                 </div>
+            </div>
+
+            <div id="caixa_escolher_imagem" >
+                <div class="file-upload">
+                    <label id="labelImagem" for="minhaImagem" class="seletor operador bto">Escolher Imagem</label>
+                    <input id="minhaImagem" type="file">
+                </div>
+
+                <input id="baixar" type="button" class="seletor operador bto" value="Baixar Imagem Filtrada">
             </div>
         </section>
 
-        <section id="ColunaOpcoes" class="Coluna">
-            <div id="BlocoMatriz">
+        <section id="colunaOpcoes">
+
+            <div id="bloco_matriz">
+
                 <h2 id="tit02">Matriz Máscara do Filtro</h2>
-                <input type="range" id="ajusta" min="3" max="7" step=2 value="3" >
-                <p id="p02">3x3-----5x5-----7x7</p>
-                <table id="matriz">
-                    <tr class="linha" >
-                        <td class="coluna" ><input type="number" class="entNum" id="1x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="1x2" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="1x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="1x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="1x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="1x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="1x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                    <tr class="linha" >
-                        <td class="coluna" ><input type="number" class="entNum" id="2x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="2x2" value="1" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="2x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="2x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="2x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="2x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="2x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                    <tr class="linha" >
-                        <td class="coluna" ><input type="number" class="entNum" id="3x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="3x2" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="3x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="3x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="3x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="3x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="3x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                    <tr id="linha">
-                        <td class="coluna" ><input type="number" class="entNum" id="4x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="4x2" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="4x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="4x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="4x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="4x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="4x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                    <tr id="linha5">
-                        <td class="coluna" ><input type="number" class="entNum" id="5x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="5x2" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="5x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="5x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="5x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="5x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="5x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                    <tr id="linha6" >
-                        <td class="coluna" ><input type="number" class="entNum" id="6x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="6x2" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="6x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="6x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="6x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="6x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="6x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                    <tr id="linha7">
-                        <td class="coluna" ><input type="number" class="entNum" id="7x1" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="7x2" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="7x3" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="7x4" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="7x5" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="7x6" value="0" min="-99" max="99" ></td>
-                        <td class="coluna" ><input type="number" class="entNum" id="7x7" value="0" min="-99" max="99" ></td>
-                    </tr>
-                </table>
+
+                <input type="range" id="controleTamanhoMatriz" min="3" max="7" step=2 value="3" >
+                <p id="texto_escalas">3x3-----5x5-----7x7</p>
+
+                <table id="matriz" ></table>
+
             </div>
 
-            <div id= "blocoBotao">
-                <select name="operador" id="operador"> 
-                    <option value="multiplicador">Multiplicar Matriz por: </option>
-                    <option value="divisor">Dividir Matriz por: </option>
-                    <option value="fator">Somar elementos por: </option>
-                    <option value="subtrator">Diminuir elementos por: </option>
-                </select>                 
-                <input type="number" value='1' id="sigma">
-                <input type="button" value='Operar' id='operacao'>
-                <input type="button" value='Normalizar' id='norm'>
+            <div id="bloco_operadores">
+                <div>
+                    <select id="select_operador" name="operador" class="operador seletor"> 
+                        <option value="multiplicador">Multiplicar Matriz por: </option>
+                        <option value="divisor">Dividir Matriz por: </option>
+                        <option value="fator">Somar elementos por: </option>
+                        <option value="subtrator">Diminuir elementos por: </option>
+                    </select>                 
+                    <input id="entrada_sigma" type="number" class=" operador" value='1' >
+                    <input id='bto_operacao' type="button" class="bto seletor operador" value='Operar' >
+                </div>
+
+                <input id='bto_normalizar' type="button" class="bto seletor operador" value='Normalizar' >    
+
+
+
+         
             </div>
 
-            <div id="BlocoFiltros">
-                <h2 id="titF">Lista de Filtros</h2>
+            <div id="bloco_filtros">
+                <h2 id="titulo_filtros">Lista de Filtros</h2>
                 <input type="radio" name="cor" value="Colorido" id="colorido">Colorido
-                <input type="radio" name="cor" value="Preto e Branco" id="PretBran" checked>Preto e Branco
+                <input type="radio" name="cor" value="Preto e Branco" id="pretoBranco" checked>Preto e Branco
                 <div id="listaDeFiltros">
                     <ul>
-                        <li><input type="button" class="filtro" value="Media" id="Fmedia"></li>
-                        <li><input type="button" class="filtro" value="Desfocar" id="Fdesfocar"></li>
-                        <li><input type="button" class="filtro" value="Aguçar" id="Faguçar"></li>
-                        <li><input type="button" class="filtro" value="HiBoost" id="Fboost"></li>
-                        <li><input type="button" class="filtro" value="Relevo" id="Frelevo"></li>
-                        <li><input type="button" class="filtro" value="Horizontal" id="Fhorizontal"></li>
-                        <li><input type="button" class="filtro" value="Vertical" id="Fvertical"></li>
-                        <li><input type="button" class="filtro" value="Laplaciana" id="Flaplaciana"></li>
-                        <li><input type="button" class="filtro" value="Gaussiana" id="Fgaussiana"></li>
-                        <li><input type="button" class="filtro" value="Detector de Bordas" id="Fdetecta"></li>
-                        <li><input type="button" class="filtro" value="Laplaciana Gaussiana" id="FlapGau"></li>
+                        <li><input type="button" class="filtro" value="Media" id="bto_filtro_media"></li>
+                        <li><input type="button" class="filtro" value="Desfocar" id="bto_filtro_desfocar"></li>
+                        <li><input type="button" class="filtro" value="Aguçar" id="bto_filtro_agucar"></li>
+                        <!-- <li><input type="button" class="filtro" value="HiBoost" id="bto_filtro_boost"></li> -->
+                        <li><input type="button" class="filtro" value="Relevo" id="bto_filtro_relevo"></li>
+                        <li><input type="button" class="filtro" value="Horizontal" id="bto_filtro_horizontal"></li>
+                        <li><input type="button" class="filtro" value="Vertical" id="bto_filtro_vertical"></li>
+                        <li><input type="button" class="filtro" value="Detector de Bordas" id="bto_filtro_detectorBordas"></li>
+                        <li><input type="button" class="filtro" value="Laplaciana" id="bto_filtro_laplaciana"></li>
+                        <li><input type="button" class="filtro" value="Gaussiana" id="bto_filtro_gaussiana"></li>
+                        <li><input type="button" class="filtro" value="Laplaciana Gaussiana" id="bto_filtro_laplacianaGaussiana"></li>
                     </ul>
-                </div>  
+                </div> 
             </div>
         </section>
     </main>
-</body>
 
-<div id="secreta">
     <!--Invisíveis-->
-    <img id="imagemSecreta"/>
-    <canvas id="canvasOutput" ></canvas>
-    <img id="imageOutput"/>  
-</div>
+    <div id="secreta" style="display: none;">
 
-<div id="info1" class="conteudo">
-    <div class="header">
-        <h2>O que são Filtros</h2>
-        <label id="x1" for="click" class="fecha">X</label>
+        <img id="imagemSecreta"/>
+        <canvas id="canvasOutput" ></canvas>
+        <img id="imageOutput"/>  
     </div>
 
+    <section  id="info1" class="conteudo">
+        <h2>O que são Filtros</h2>
+        <article>
+            
     <article>
         <div>
             A <strong>filtragem espacial</strong>  é uma técnica usada em processamento de imagens. <br>
@@ -201,179 +154,178 @@
             Filtros espaciais utilizam uma matriz máscara, também conhecido como kernel, para realizar a filtragem.
             Um filtro pode ser Linear ou não-linear. <br>
             <strong>Filtro Linear</strong>: Pondera o valor da imagem durante o processamento. <br>
-            <strong>Filtro Não-Linear</strong>: Não pondera o valor da imagem durante o processamento.
+            <strong>Filtro Não-Linear</strong>: Não pondera o valor da imagem durante o processamento.<br>
+                <br>
+                <br>
         </div>
     </article>
-</div>
+    </section>
 
-<div id="info2" class="conteudo">
-    <div class="header">
-        <h2>Tipos de Filtros</h2>
-        <label id="x2" for="click" class="fecha">X</label>
-    </div>
+    <section  id="info2" class="conteudo">
+        <h1>Tipos de Filtros</h1>
+        <article>
+            <div class="texto">
+                Existem diversos tipos de máscaras conhecidas e utilizadas para diferentes objetivos.<br>
+                O tamanho das máscaras (kernel) e os valores de seus parâmetros determinam o tipo de filtragem
+                que será produzido na imagem de saída. <br>
+                Eles podem ser: filtros de suavização, filtros de realce e detectores de bordas. <br> <br> <hr>
+                Os <strong>filtros de suavização</strong> são usados para redução de ruídos, dando um leve borramento à imagem que
+                atenua falhas em formatos de pontos, linhas, curvas ou descontinuidades da imagem digital. <br>
+                Como pode ser visto na imagem da Lenna abaixo:
+            </div>
 
-    <article>
-        <div>
-            Existem diversos tipos de máscaras conhecidas e utilizadas para diferentes objetivos.<br>
-            O tamanho das máscaras (kernel) e os valores de seus parâmetros determinam o tipo de filtragem
-            que será produzido na imagem de saída. <br>
-            Eles podem ser: filtros de suavização, filtros de realce e detectores de bordas. <br> <br> <hr>
-            Os <strong>filtros de suavização</strong> são usados para redução de ruídos, dando um leve borramento à imagem que
-            atenua falhas em formatos de pontos, linhas, curvas ou descontinuidades da imagem digital. <br>
-             Como pode ser visto na imagem da Lenna abaixo:
-        </div>
+            <img class="exemplo1" src="imagens/LennaSuave.png" alt="Imagem da Lenna Original e Suavizada">
+            
+            <div class="texto">
+                Os <strong>filtros de realce</strong> tem como objetivo destacar as transições de intensidade da imagem. Recuperando
+                as linhas de contraste dentro de imagem, podendo, por vezes, serem agregadas à imagem original para
+                ajustar estas linhas. Perceba como os pelos do animal ficam mais evidentes na imagem realçada abaixo:
+            </div>
 
-        <img class="exemplo1" src="imagens/LennaSuave.png" alt="Imagem da Lenna Original e Suavizada">
-        
-        <div>
-            Os <strong>filtros de realce</strong> tem como objetivo destacar as transições de intensidade da imagem. Recuperando
-            as linhas de contraste dentro de imagem, podendo, por vezes, serem agregadas à imagem original para
-            ajustar estas linhas. Perceba como os pelos do animal ficam mais evidentes na imagem realçada abaixo:
-        </div>
+            <img class="exemplo1" src="imagens/labradorComp.png" alt="Imagem de um labrador. Original e Realçada.">
 
-        <img class="exemplo1" src="imagens/labradorComp.png" alt="Imagem de um labrador. Original e Realçada.">
+            <div class="texto">
+                Os filtros detectores de bordas, assim como os de realce, exibem com muita clareza as diferenças entre 
+                as transições de intensidade de uma imagem, entretanto, eles destacam totalmente essas linhas, ignorando
+                as cores de fundo e mostrando apenas os contornos da imagem. Veja abaixo:
+            </div>
 
-        <div>
-            Os filtros detectores de bordas, assim como os de realce, exibem com muita clareza as diferenças entre 
-            as transições de intensidade de uma imagem, entretanto, eles destacam totalmente essas linhas, ignorando
-            as cores de fundo e mostrando apenas os contornos da imagem. Veja abaixo:
-        </div>
+            <img class="exemplo1" src="imagens/paisagemHar.jpg" alt="Imagem de uma floresta. Original e usando Sobel-x">
+        </article>
+    </section>
 
-        <img class="exemplo1" src="imagens/paisagemHar.jpg" alt="Imagem de uma floresta. Original e usando Sobel-x">
-    </article>
-</div>
+    <section  id="info3" class="conteudo">
+        <h1>Convolução Digital</h1>
+        <article>
+            <div>
+                A filtragem de imagens utiliza a técnica de <strong>convolução digital </strong> para processar a imagem resultado
+                a partir da imagem de entrada e a da máscara. <br><br>
+                Uma matriz denominada <strong>máscara (kernel)</strong> é usada para convoluir com a imagem digital, servindo como o núcleo de
+                convolução e gerando uma terceira matriz que será a imagem filtrada. Existem vários tipos conhecidos e utilizados
+                de matrizes máscaras para realização da filtragem no domínio espacial, cada uma delas aproximando um efeito de filtragem 
+                esperado para a imagem. Elas geralmente têm um tamanho de linhas e colunas que varia entre 3x3 a 7x7. <br>
+                <br><hr><br>
+                A convolução é uma operação de somatório do produto entre duas funções, ao longo da região em que elas se sobrepõem,
+                em razão do deslocamento existente entre elas. <br>
+                Por isso, ela é a ferramenta usada para processar a filtragem. Afinal, temos duas matrizes que irão combinar seus elementos
+                utilizando os valores dentro de ambas. A matriz imagem e a matriz da máscara.
+            </div>
 
-<div id="info3" class="conteudo">
-    <div class="header">
-        <h2>Convolução Digital</h2>
-        <label id="x3" for="click" class="fecha">X</label>
-    </div>
+            <img class="exemplo1" src="imagens/Convolução.png" alt="Matriz Imagem, Matriz máscara e Matriz resultado">
 
-    <article>
-        <div>
-            A filtragem de imagens utiliza a técnica de <strong>convolução digital </strong> para processar a imagem resultado
-            a partir da imagem de entrada e a da máscara. <br><br>
-            Uma matriz denominada <strong>máscara (kernel)</strong> é usada para convoluir com a imagem digital, servindo como o núcleo de
-            convolução e gerando uma terceira matriz que será a imagem filtrada. Existem vários tipos conhecidos e utilizados
-            de matrizes máscaras para realização da filtragem no domínio espacial, cada uma delas aproximando um efeito de filtragem 
-            esperado para a imagem. Elas geralmente têm um tamanho de linhas e colunas que varia entre 3x3 a 7x7. <br>
-            <br><hr><br>
-            A convolução é uma operação de somatório do produto entre duas funções, ao longo da região em que elas se sobrepõem,
-            em razão do deslocamento existente entre elas. <br>
-            Por isso, ela é a ferramenta usada para processar a filtragem. Afinal, temos duas matrizes que irão combinar seus elementos
-            utilizando os valores dentro de ambas. A matriz imagem e a matriz da máscara.
-        </div>
+            <div>     
+                O processo se dá da seguinte forma: <br>
+                A <strong>matriz da máscara</strong>  percorre a imagem de entrada fazendo a operação de convolução pixel a pixel,
+                gerando uma imagem de saída. Ela sobrepõe o pixel no qual opera e utiliza os valores dos pixeis vizinhos a ele para
+                o cálculo. 
+            </div>
 
-        <img class="exemplo1" src="imagens/Convolução.png" alt="Matriz Imagem, Matriz máscara e Matriz resultado">
+            <img class="exemplo1" src="imagens/Convolução2.png" alt="Cálculo da Convolução">
+            
+            <div>
+                Quando o  pixel em que opera é um valor da <strong>borda da imagem</strong>  de entrada, os valores dos vizinhos inexistentes são
+                considerados nulos. Dependendo da maneira como a filtragem é construída, os pixeis próximos às bordas não são recalculados,
+                apenas repetidos.
+            </div>
 
-        <div>     
-            O processo se dá da seguinte forma: <br>
-            A <strong>matriz da máscara</strong>  percorre a imagem de entrada fazendo a operação de convolução pixel a pixel,
-            gerando uma imagem de saída. Ela sobrepõe o pixel no qual opera e utiliza os valores dos pixeis vizinhos a ele para
-            o cálculo. 
-        </div>
+            <img class="exemplo1" src="imagens/truncado.png" alt="Cálculo nas bordas">
 
-        <img class="exemplo1" src="imagens/Convolução2.png" alt="Cálculo da Convolução">
-        
-        <div>
-            Quando o  pixel em que opera é um valor da <strong>borda da imagem</strong>  de entrada, os valores dos vizinhos inexistentes são
-            considerados nulos. Dependendo da maneira como a filtragem é construída, os pixeis próximos às bordas não são recalculados,
-            apenas repetidos.
-        </div>
+            <div>
+                No caso de uma imagem colorida, que possui três canais de intensidade de cores, o máscara faz o cálculo em cima de cada
+                um dos valores de intensidade, ou opera em cima de apenas um dos valores RGB, conforme opção de uso.
+            </div><br>
+                    <br>
+                    <br>
+        </article>
+    </section>
 
-        <img class="exemplo1" src="imagens/truncado.png" alt="Cálculo nas bordas">
+    <section  id="info4" class="conteudo">
+        <h1>Tutorial</h1>
+        <article>
+            <div >
+                Para usar este programa, tudo o que você precisa é <strong>carregar</strong> uma imagem para a área de exibição,
+                <strong>ajustar os elementos</strong> da matriz da máscara, usar os controles deslizantes para <strong>ver o resultado</strong> e
+                comparar com a imagem original. Você pode também pode baixar a imagem filtrada após o processo. <br>
+                <br><hr><br>
+                Use o botão <strong>Escolher arquivo</strong>  para carregar a imagem para a área de exibição. <br>
+                A imagem se ajustará ao tamanho da área de exibição se o tamanho da largura ou da coluna ultrapassar <strong>750 pixeis</strong>, 
+                entretanto, ao baixar, o resultado o tamanho original será mantido. <br>
+                <br><hr><br>
+                Use o botão  <strong>Baixar Imagem Filtrada</strong>  para fazer o download do resultado.<br>
+                O formato da imagem filtrada será na extensão PNG. <br>
+                <br><hr><br>
+                Use os <strong>controles deslizantes</strong> horizontal e vertical ao redor da imagem para comparar o antes e depois da filtragem. <br>
+                <img class="exemplo3" src="imagens/ControleDeslizante.png" alt="Imagem exibindo controle deslizatente horizontal">
+                <img class="exemplo3" src="imagens/ControleDeslizanteV.png" alt="Imagem exibindo controle deslizatente vertical">
+                <br><hr><br>
+                Use a <strong>matriz máscara</strong> para filtrar a imagem. O processo ocorre automaticamente ao mudar qualquer
+                elemento da matriz. Você também pode ajustar o tamanho de linhas e colunas entre 3x3, 5x5 e 7x7. <br>
+                <img class="exemplo1" src="imagens/BMF.png" alt="Tamanhos possíveis da máscara">
+                <hr><br>
+                Use a entrada de valor abaixo da máscara para operar sobre todos os elementos da máscara de uma só vez.
+                Se quiser <strong>zerar a máscara</strong>, basta multiplicar por zero, por exemplo. <br>
+                <br><hr><br>
+                Você pode querer ver o resultado em <strong>preto e branco ou colorido</strong>. Para tanto use a checkbox da lista de filtros.<br>
+                Lembrando que, o resultado de alguns filtros não opera muito bem dependendo dessa escolha. Faça os testes. <br>
+                <br><hr><br>
+                A <strong>lista de filtros</strong> contém alguns dos filtros mais comuns da literatura. <br>
+                Clique no nome de algum deles para trazer os valores dele para máscara. <br>
+                <br><hr><br>
+                Desejo um bom uso da ferramenta!<br>
+                <br>
+                <br>
+            </div>
+        </article>
+    </section>
 
-        <div>
-            No caso de uma imagem colorida, que possui três canais de intensidade de cores, o máscara faz o cálculo em cima de cada
-            um dos valores de intensidade, ou opera em cima de apenas um dos valores RGB, conforme opção de uso.
-        </div>
-    </article>
-</div>
-
-<div id="info4" class="conteudo">
-    <div class="header">
-        <h2>Tutorial</h2>
-        <label id="x4" for="click" class="fecha">X</label>
-    </div>
-
-    <article>
-        <div>
-            Para usar este programa, tudo o que você precisa é <strong>carregar</strong> uma imagem para a área de exibição,
-            <strong>ajustar os elementos</strong> da matriz da máscara, usar os controles deslizantes para <strong>ver o resultado</strong> e
-            comparar com a imagem original. Você pode também pode baixar a imagem filtrada após o processo. <br>
-            <br><hr><br>
-            Use o botão <strong>Escolher arquivo</strong>  para carregar a imagem para a área de exibição. <br>
-            A imagem se ajustará ao tamanho da área de exibição se o tamanho da largura ou da coluna ultrapassar <strong>750 pixeis</strong>, 
-            entretanto, ao baixar, o resultado o tamanho original será mantido. <br>
-            <br><hr><br>
-            Use o botão  <strong>Baixar Imagem Filtrada</strong>  para fazer o download do resultado.<br>
-            O formato da imagem filtrada será na extensão PNG. <br>
-            <br><hr><br>
-            Use os <strong>controles deslizantes</strong> horizontal e vertical ao redor da imagem para comparar o antes e depois da filtragem. <br>
-            <img class="exemplo3" src="imagens/ControleDeslizante.png" alt="Imagem exibindo controle deslizatente horizontal">
-            <img class="exemplo3" src="imagens/ControleDeslizanteV.png" alt="Imagem exibindo controle deslizatente vertical">
-            <br><hr><br>
-            Use a <strong>matriz máscara</strong> para filtrar a imagem. O processo ocorre automaticamente ao mudar qualquer
-            elemento da matriz. Você também pode ajustar o tamanho de linhas e colunas entre 3x3, 5x5 e 7x7. <br>
-            <img class="exemplo1" src="imagens/BMF.png" alt="Tamanhos possíveis da máscara">
-            <hr><br>
-            Use a entrada de valor abaixo da máscara para operar sobre todos os elementos da máscara de uma só vez.
-            Se quiser <strong>zerar a máscara</strong>, basta multiplicar por zero, por exemplo. <br>
-            <br><hr><br>
-            Você pode querer ver o resultado em <strong>preto e branco ou colorido</strong>. Para tanto use a checkbox da lista de filtros.<br>
-            Lembrando que, o resultado de alguns filtros não opera muito bem dependendo dessa escolha. Faça os testes. <br>
-            <br><hr><br>
-            A <strong>lista de filtros</strong> contém alguns dos filtros mais comuns da literatura. <br>
-            Clique no nome de algum deles para trazer os valores dele para máscara. <br>
-            <br><hr><br>
-            Desejo um bom uso da ferramenta!
-        </div>
-    </article>
-</div>
-
-<div id="info5" class="conteudo">
-    <div class="header">
-        <h2>Sobre o Programa e o Autor</h2>
-        <label id="x5" for="click" class="fecha">X</label>
-    </div>
-
-    <article>
-        <div>
-            <br>
-            Esta ferramenta foi criada para <strong>auxiliar no ensino e aprendizado</strong> de filtragem espacial e convolução digital
-            dos cursos de processamento Digital de Imagens.<br>
-            Pretendo continuar aperfeiçoando esta ferramenta. Já tenho algumas boas mudança em mente para ela. <br>
-            <strong>Filtros Espaciais versão: 1.0</strong> <br>
-            <br><hr><br>
-            <div id="apresenta" >
-                <div id="fotinha">
-                    <img class="exemplo4" src="imagens/perfil.jpg" alt="Foto do autor">
-                </div>
-                <div id="recado" >
-                    Olá, meu nome é Anderson Benício! <br>
-                    Sou bacharel em Ciência e Tecnologia, formado pela <strong>Universidade Federal do Rio Grande do Norte (UFRN)</strong>,
-                    e logo logo um engenheiro da computação. <br>
-                    Gosto das áreas de desenvolvimento de software e processamento de imagens. <br>
-                    Moro atualmente no Brasil e estou sempre criando coisas novas. <br>
-                    Este é o meu GIT: <a href="https://github.com/andyrodrigo">https://github.com/andyrodrigo</a> <br>
-                    Caso queria entrar em contato meu e-mail é: <address>andyrodrigo2@gmail.com</address>
-
-                </div>
-            </div>  
-        </div>
-    </article>
-</div>
+    <section  id="info5" class="conteudo">
+        <h1>Sobre o Programa e o Autor</h1>
+        <article>
+            <div>
+                Esta ferramenta foi criada para <strong>auxiliar no ensino e aprendizado</strong> de filtragem espacial e convolução digital
+                dos cursos de processamento Digital de Imagens.<br>
+                Pretendo continuar aperfeiçoando esta ferramenta. Já tenho algumas boas mudança em mente para ela. <br>
+                <strong>Filtros Espaciais - versão: 1.1</strong> <br>
+                <br><hr><br>
+                <div id="apresenta" >
+                    <div id="fotinha">
+                        <img class="exemplo4" src="imagens/perfil.jpg" alt="Foto do autor">
+                    </div>
+                    <div id="recado" >
+                        Olá, meu nome é Anderson Benício! <br>
+                        Sou bacharel em Ciência e Tecnologia e engenheiro da computação, ambas as formações pela <strong>Universidade Federal do Rio Grande do Norte (UFRN)</strong>, <br>
+                        Gosto das áreas de desenvolvimento de software e processamento de imagens. <br>
+                        Moro atualmente no Brasil e estou sempre criando coisas novas. <br> <br>
+                        Este é o meu GIT: <a href="https://github.com/andyrodrigo" target="_blank">https://github.com/andyrodrigo</a> <br>
+                        Meu LinkedIn: <a href="https://www.linkedin.com/in/anderson-benicio/" target="_blank">https://www.linkedin.com/in/anderson-benicio/</a> <br>
+                        <br>
+                        Caso queria entrar em contato meu e-mail é: <address>andyrodrigo2@gmail.com</address>
+                        <br>
+                        <br>
+                    </div>
+                </div>  
+            </div>
+        </article>
+    </section>
+</body>
 
 <footer>
-    <p> Criado por Anderson Rodrigo "Andy" </p>
-    <a class="logos" href="https://github.com/andyrodrigo">
+    <p>Criado por Anderson "Andy" Benício</p>
+
+    <a href="https://github.com/andyrodrigo" target="_blank">
         <img src="imagens/github_logo.png" alt="logo do github">
     </a>
-    <a class="logos" href="https://www.linkedin.com/in/anderson-rodrigo-gomes-ben%C3%ADcio-689190218/">
+
+    <a  href="https://www.linkedin.com/in/anderson-benicio/" target="_blank">
         <img src="imagens/linkedin_logo.png" alt="logo do LinkedIn">
     </a>
 </footer>
 
-<script src="index.js"></script>
+<script src="scripts/variaveis.js"></script>
+<script src="scripts/funcoes.js"></script>
+<script src="scripts/inicializacao.js"></script>
 
 </html>
+
+
+

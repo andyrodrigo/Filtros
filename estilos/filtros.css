@@ -1,9 +1,9 @@
 #bloco_filtros {
-  height: 56%;
+  width: 100%;
+  max-width: 350px;
   text-align: center;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 10px;
-  background-color: darkslategrey;
 }
 
 #titulo_filtros {

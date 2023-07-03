@@ -1,0 +1,324 @@
+@charset "UTF-8"; /**/
+
+body {
+  background-color: #f0f2f5;
+}
+
+/* I--------------- Formatação do Cabeçalho ---------------I */
+header {
+  background-color: #f1f1f1; /*Cor de Fundo*/
+  padding: 5px; /*Espaçamento dentro dele*/
+  margin: 0;
+  outline: 0;
+  border: 0;
+  text-align: center; /*Alinhamento do texto*/
+  display: none;
+}
+/* F--------------- Formatação do Cabeçalho ---------------F */
+
+/* I--------------- Formatação da Navegação ---------------I */
+nav {
+  overflow: hidden; /*Muda o contexto de exibição de flutuação*/
+  background-color: #1b74e4; /*Cor de Fundo*/
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+nav a {
+  /*--LINKS DE NAVEGAÇÃO --*/
+  padding: 14px 16px; /*Espaçamento dentro dele (vertical e horizontal)*/
+  text-decoration: none; /*Retira a linha embaixo dos links*/
+  color: #f2f2f2; /*Cor do Texto*/
+  text-align: center; /*Alinhamento do Texto*/
+  display: block; /*Exibe no modelo especificado: blocos*/
+  float: left; /*Muda seu fluxo para a: Esquerda*/
+}
+nav a:hover {
+  /*--AO PASSAR O MOUSE --*/
+  background-color: #ddd; /*Cor de Fundo*/
+  color: black; /*Cor do Texto*/
+}
+/* F--------------- Formatação da Navegação ---------------F */
+
+/* I--------------- Formatação do Conteúdo Geral ---------------I */
+main {
+  width: 100%;
+}
+main:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.Coluna {
+  float: left;
+  height: 630px; /*Tamanho em tela*/
+  width: 100%;
+}
+/* F--------------- Formatação do Conteúdo Geral ---------------F */
+
+/* I--------------- Formatação da Coluna Opções ---------------I */
+#ColunaOpcoes {
+  width: 40%; /*Largura que ocupa dentro de Main*/
+  padding: 0;
+  outline: 0;
+  margin: 0;
+}
+
+/* I--------------- Formatação das Matrizes ---------------I */
+#BlocoMatriz {
+  height: 43%;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+#tit02 {
+  font-size: 20px;
+  padding: 0;
+  border: 0;
+  margin: 5px;
+  outline: 0;
+}
+#p02 {
+  font-size: 10px;
+  padding: 0;
+  border: 0;
+  margin: 0 0 5px 0;
+  outline: 0;
+}
+table {
+  border: 2px solid black;
+  border-radius: 10px;
+  border-spacing: 1px;
+  background-color: #1b74e4;
+  padding: 2px;
+  margin-left: 50px;
+}
+.entNum {
+  width: 50px;
+}
+td,
+th {
+  padding: 1px;
+}
+#ajusta {
+  width: 18%;
+}
+/* F--------------- Formatação das Matrizes ---------------F */
+
+#zerar {
+  border-radius: 50%;
+}
+#blocoBotao {
+  text-align: center;
+}
+
+/* I--------------- Formatação dos Filtros ---------------I */
+#BlocoFiltros {
+  height: 56%;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 10px;
+}
+#titF {
+  font-size: 20px;
+}
+ul {
+  list-style-type: none;
+  margin-left: -40px;
+}
+.filtro {
+  width: 100%;
+  margin: 0;
+  background-color: #1b74e4;
+  color: white;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.filtro:hover {
+  color: black;
+  background-color: silver;
+  font-weight: bold;
+  font-size: medium;
+}
+
+#listaDeFiltros {
+  margin-left: 55px;
+  height: 80%;
+  width: 80%;
+}
+/* F--------------- Formatação dos Filtros ---------------F */
+
+/* F--------------- Formatação da Coluna Opções ---------------F */
+
+/* I--------------- Formatação da Coluna Imagens ---------------I */
+#ladoA {
+  width: 1%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: 0;
+}
+#ladoB {
+  width: 100%;
+}
+
+#ColunaImagens {
+  width: 59%; /*Largura que ocupa dentro de Main*/
+}
+#escolha {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 5px;
+  outline: 0;
+  margin-left: 50px;
+}
+#baixar {
+  color: black;
+}
+#Bimagem {
+  position: relative; /*mantêm as 2 imagens sobrepostas*/
+  width: 620px;
+  height: 420px;
+  border: 10px solid white;
+  top: 0;
+  left: 10px;
+}
+.img {
+  width: 100%;
+  height: 100%;
+  background-size: 620px 420px; /*largura altura*/
+  position: absolute;
+  top: 0;
+  left: 0px;
+}
+#imagemFundo {
+  /*background-image: url('imagens/colorido1.jpg');*/
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+#imagemFrente {
+  /*background-image: url('imagens/semcor1.jpg');*/
+  background-repeat: no-repeat;
+  width: 50%;
+}
+#medidorH {
+  width: 620px;
+  position: relative;
+  left: 15px;
+}
+#medidorV {
+  -webkit-appearance: slider-vertical;
+  /*transform-origin: 75px 75px;
+  transform: rotate(-90deg);*/
+  background: #5c0e0e;
+  position: relative;
+  height: 420px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  left: -60px;
+  top: 53px;
+}
+/* F--------------- Formatação da Coluna Imagens ---------------F */
+
+/* I--------------- Formatação secreta ---------------I */
+#secreta {
+  display: none;
+}
+/* F--------------- Formatação secreta ---------------F */
+
+/* I--------------- Formatação pop-ups ---------------I */
+.conteudo {
+  position: absolute;
+  top: 10%;
+  left: 1%;
+  width: 90%;
+  height: 600px;
+  background-color: #f0f2f5;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 2px 12px 0 black;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease-in;
+}
+
+.header {
+  height: 68px;
+  background-color: #1b74e4;
+  box-shadow: 0 2px 12px 0 rgb(160, 158, 158);
+  overflow: hidden;
+}
+.header h2 {
+  color: white;
+  padding-left: 32px;
+  font-weight: normal;
+}
+.exemplo1 {
+  width: 80%;
+  padding: 10px;
+}
+.exemplo2 {
+  width: 50%;
+  padding: 10px;
+}
+.exemplo3 {
+  width: 30%;
+  padding: 10px;
+}
+.exemplo4 {
+  width: 20%;
+  padding: 10px;
+}
+article {
+  padding: 20px;
+  font-size: 15px;
+  max-height: 460px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  overflow: auto;
+}
+
+#apresenta {
+  width: 100%;
+}
+#fotinha {
+  width: 60%;
+  position: absolute;
+}
+#recado {
+  width: 60%;
+  position: absolute;
+  left: 15%;
+  top: 40%;
+}
+
+.fecha {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+/* F--------------- Formatação pop-ups ---------------F */
+
+/* I--------------- Formatação do Footer ---------------I */
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f1f1f1;
+  background-color: #1b74e4; /*Cor de Fundo*/
+  padding: 10px; /*Espaçamento dentro dele*/
+  text-align: center; /*Alinhamento do texto*/
+  margin: 190px 10px 10px 10px;
+}
+
+.logos > img {
+  width: 30px;
+  height: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+/* F--------------- Formatação do Footer ---------------F */
